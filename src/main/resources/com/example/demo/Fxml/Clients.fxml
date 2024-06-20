@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.demo.Controllers.Clients.ClientsController">
+    <HBox spacing="10">
+        <VBox spacing="10" padding="10">
+            <Label text="Welcome, admin"/>
+            <Button text="Home" fx:id="homeButton"/>
+            <Button text="Add Products" fx:id="addProductsButton"/>
+            <Button text="Orders" fx:id="ordersButton"/>
+            <Button text="Sign Out" fx:id="signOutButton"/>
+        </VBox>
+        <VBox spacing="10" padding="10">
+            <TextField fx:id="productIdField" promptText="Product ID"/>
+            <ComboBox fx:id="productTypeCombo" promptText="Product Type"/>
+            <TextField fx:id="brandField" promptText="Brand"/>
+            <TextField fx:id="productNameField" promptText="Product Name"/>
+            <ComboBox fx:id="statusCombo" promptText="Status"/>
+            <TextField fx:id="priceField" promptText="Price"/>
+            <HBox spacing="10">
+                <Button text="Add" fx:id="addButton"/>
+                <Button text="Update" fx:id="updateButton"/>
+                <Button text="Delete" fx:id="deleteButton"/>
+                <Button text="Reset" fx:id="resetButton"/>
+            </HBox>
+        </VBox>
+        <TableView fx:id="productTable">
+            <columns>
+                <TableColumn text="Product ID"/>
+                <TableColumn text="Type"/>
+                <TableColumn text="Brand"/>
+                <TableColumn text="Product Name"/>
+                <TableColumn text="Price"/>
+                <TableColumn text="Status"/>
+            </columns>
+        </TableView>
+    </HBox>
+</VBox>
