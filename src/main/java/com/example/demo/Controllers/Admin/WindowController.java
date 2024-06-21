@@ -14,10 +14,11 @@ public class WindowController implements Initializable {
 
     public BorderPane client_parent;
     private Stage stage;
-
-    public void setStage(Stage stage) {
-        this.stage = stage;
-    }
+    /*
+        public void setStage(Stage stage) {
+            this.stage = stage;
+        }
+    */
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -26,6 +27,7 @@ public class WindowController implements Initializable {
                 case "Produit"-> client_parent.setCenter(model.getInstance().getViewFactory().getProduitView());
                 case "Client"->client_parent.setCenter(model.getInstance().getViewFactory().getClientView());
                 case "Commande"->client_parent.setCenter(model.getInstance().getViewFactory().getCommandeView());
+                case "Login"->client_parent.setCenter(model.getInstance().getViewFactory().getLoginView());
                 //default -> client_parent.setCenter(model.getInstance().getViewFactory().getProduitView());
             }
         } );

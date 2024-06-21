@@ -2,6 +2,7 @@ package com.example.demo.Views;
 
 import com.example.demo.Controllers.Admin.WindowController;
 import com.example.demo.Controllers.Admin.alternitaveController;
+import com.example.demo.Models.model;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.fxml.FXMLLoader;
@@ -18,6 +19,8 @@ public class ViewFactory {
     private AnchorPane produitView;
     private AnchorPane clientView;
     private AnchorPane commandeView;
+    private AnchorPane loginView;
+    private Stage close;
 
     public ViewFactory() {
         this.clientSelectedMenuItem = new SimpleStringProperty("");
@@ -59,8 +62,19 @@ public class ViewFactory {
         }
         return commandeView;
     }
+    public AnchorPane getLoginView() {
+        if (loginView == null) {
+            try {
+                loginView = new FXMLLoader(getClass().getResource("/FXML/Admin/Login.fxml")).load();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        return loginView;
+    }
 
     public void showLoginWindow() {
+
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/Admin/Login.fxml"));
             Scene scene = new Scene(loader.load());
@@ -73,6 +87,10 @@ public class ViewFactory {
         }
     }
 
+    public void setClose(Stage close) {
+        this.close = close;
+    }
+
     public void showWindow() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/Admin/Window.fxml"));
@@ -82,10 +100,14 @@ public class ViewFactory {
             Stage stage = new Stage();
             stage.setScene(scene);
             stage.setTitle("Gestionnaire");
+            setClose(stage);
             stage.show();
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    public Stage getClose() {
+        return close;
     }
 
     /* Close a stage when another is open */

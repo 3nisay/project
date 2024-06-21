@@ -27,7 +27,7 @@ public class LoginController implements Initializable {
         String username = username_fld.getText();
         String password = password_fld.getText();
 
-        if ("admin".equals(username) && "admin".equals(password)) {
+        if ("admin".equals(username) && "*****".equals(password)) {
                 onLogin();
         } else {
             error_lbl.setText("Invalid username or password.");

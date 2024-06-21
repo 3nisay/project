@@ -64,7 +64,8 @@ public class alternitaveController implements Initializable {
         Optional<ButtonType> result = alert.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK) {
             // Show the login window
-            viewFactory.showLoginWindow();
+            model.getInstance().getViewFactory().showLoginWindow();
+            model.getInstance().getViewFactory().closeStage(model.getInstance().getViewFactory().getClose());
 
             // Close the current admin window
             Stage currentStage = (Stage) Logout_btn.getScene().getWindow();
