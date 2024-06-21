@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.example.demo.Models.model;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -8,16 +9,12 @@ import javafx.stage.Stage;
 
 public class App extends Application {
 
-    @Override
-    public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/demo/Fxml/Login.fxml"));
-        primaryStage.setTitle("Loggin");
-        primaryStage.setScene(new Scene(root));
-        primaryStage.show();
-    }
-
     public static void main(String[] args) {
         launch(args);
+    }
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        model.getInstance().getViewFactory().showLoginWindow();
     }
 }
 
