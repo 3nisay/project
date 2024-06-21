@@ -13,7 +13,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="600.0" prefWidth="850.0" stylesheets="@../../Styles/Commande.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.Controllers.Admin.CommandeController">
    <children>
       <VBox layoutX="58.0" layoutY="135.0" prefHeight="589.0" prefWidth="493.0" spacing="30.0" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0">
